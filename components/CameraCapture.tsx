@@ -110,10 +110,10 @@ export function CameraCapture({ onComplete, onCancel }: CameraCaptureProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center p-2 md:p-4">
-      <div className="max-w-4xl w-full">
+    <div className="h-screen overflow-hidden bg-gray-900 flex flex-col items-center justify-start p-2 md:p-4 pt-4">
+      <div className="max-w-4xl w-full flex flex-col h-full">
         {/* Progress Indicator */}
-        <div className="mb-4 md:mb-6 flex justify-center gap-2">
+        <div className="mb-2 md:mb-4 flex justify-center gap-2">
           {[0, 1, 2].map((step) => (
             <div
               key={step}
@@ -133,13 +133,13 @@ export function CameraCapture({ onComplete, onCancel }: CameraCaptureProps) {
           key={currentStep}
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="text-xl md:text-3xl font-bold text-white text-center mb-4 md:mb-8 px-2"
+          className="text-lg md:text-3xl font-bold text-white text-center mb-2 md:mb-4 px-2"
         >
           Step {currentStep + 1}: {instructions[currentStep]}
         </motion.h2>
 
         {/* Camera View or Preview */}
-        <div className="relative bg-black rounded-lg overflow-hidden shadow-2xl mb-4 md:mb-6 max-h-[60vh]">
+        <div className="relative bg-black rounded-lg overflow-hidden shadow-2xl mb-2 md:mb-4 flex-1">
           {!showPreview ? (
             <>
               <video
@@ -200,7 +200,7 @@ export function CameraCapture({ onComplete, onCancel }: CameraCaptureProps) {
         {/* Cancel Button */}
         <button
           onClick={onCancel}
-          className="w-full py-3 text-sm md:text-base text-gray-400 hover:text-white transition-colors"
+          className="w-full py-2 md:py-3 text-sm md:text-base text-gray-400 hover:text-white transition-colors"
         >
           Cancel
         </button>
