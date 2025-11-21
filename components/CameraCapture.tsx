@@ -139,7 +139,7 @@ export function CameraCapture({ onComplete, onCancel }: CameraCaptureProps) {
         </motion.h2>
 
         {/* Camera View or Preview */}
-        <div className="relative bg-black rounded-lg overflow-hidden shadow-2xl mb-4 md:mb-6">
+        <div className="relative bg-black rounded-lg overflow-hidden shadow-2xl mb-4 md:mb-6 max-h-[60vh]">
           {!showPreview ? (
             <>
               <video
@@ -147,7 +147,7 @@ export function CameraCapture({ onComplete, onCancel }: CameraCaptureProps) {
                 autoPlay
                 playsInline
                 muted
-                className="w-full h-auto scale-x-[-1]"
+                className="w-full h-full object-cover scale-x-[-1]"
               />
               <canvas ref={canvasRef} className="hidden" />
               
@@ -163,7 +163,7 @@ export function CameraCapture({ onComplete, onCancel }: CameraCaptureProps) {
             </>
           ) : (
             <>
-              <img src={previewImage} alt="Preview" className="w-full h-auto" />
+              <img src={previewImage} alt="Preview" className="w-full h-full object-cover" />
               
               {/* Preview Actions */}
               <div className="absolute bottom-4 md:bottom-8 left-0 right-0 flex justify-center items-center gap-3 px-2">
