@@ -55,7 +55,7 @@ export default function Home() {
   };
 
   return (
-    <div className="h-screen overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="fixed inset-0 bg-gradient-to-br from-blue-50 to-indigo-100">
       <AnimatePresence mode="wait">
         {appState === 'landing' && (
           <motion.div
@@ -63,7 +63,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="flex h-screen items-center justify-center p-4"
+            className="flex h-full w-full items-center justify-center p-4"
           >
             <motion.button
               initial={{ scale: 0.9, opacity: 0 }}
